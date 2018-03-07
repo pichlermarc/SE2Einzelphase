@@ -19,14 +19,15 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Checks whether text in tbInputBox is a palindrome and displays a Message Box.
+     *
      * @param view
      */
     public void checkPalindrome(View view) {
         EditText inputBox = (EditText) findViewById(R.id.tbInputBox);
-        String input = inputBox.getText().toString();
+        String input = inputBox.getText().toString().trim();
         String output = "";
         if (input.length() < 5)
-            output = "Please enter more than 5 characters!";
+            output = "Please enter more than 5 characters, spaces at the end of the string will be omitted!";
         else if (StringUtils.isPalindrome(input))
             output = input + " is a palindrome";
         else
